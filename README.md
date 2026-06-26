@@ -2,4 +2,4 @@
 Sistema de loja simples com Flask e MariaDB
 primeiro commit
 teste direto na main
-testando protecao
+testando protecaoteste protecao main
