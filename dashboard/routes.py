@@ -20,15 +20,12 @@ def index():
         cursor = conn.cursor()
         cursor.execute('SELECT COUNT(*) FROM clientes')
         totais['clientes'] = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM categorias')
-        totais['categorias'] = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM produtos')
-        totais['produtos'] = cursor.fetchone()[0]
-        cursor.execute('SELECT COUNT(*) FROM vendas')
-        totais['vendas'] = cursor.fetchone()[0]
+        
     except mysql.connector.Error as e:
         flash(f'Erro ao carregar dashboard: {e}', 'danger')
+
     finally:
         if cursor: cursor.close()
         if conn: conn.close()
+        
     return render_template('index.html', totais=totais)
