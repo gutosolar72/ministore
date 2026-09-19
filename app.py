@@ -4,8 +4,6 @@ from clientes.routes import clientes_bp
 from dashboard.routes import dashboard_bp
 
 
-
-
 app = Flask(__name__)
 app.secret_key = 'ministore-secret-key-2026'
 
